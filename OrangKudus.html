@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+</head>
+<body>
+<script type="text/javascript"> var numposts = 100; var standardstyling = true; function showrecentposts(json) { for (var i = 0; i < numposts; i++) { var entry = json.feed.entry[i]; var posttitle = entry.title.$t; var posturl; if (i == json.feed.entry.length) break; for (var k = 0; k < entry.link.length; k++) { if (entry.link[k].rel == 'alternate') { posturl = entry.link[k].href; break; }} posttitle = posttitle.link(posturl); if (standardstyling) document.write('<li>'); document.write(posttitle);} if (standardstyling) document.write('</li>'); } </script>
+<ol>
+<script src="https://katolikkasih.blogspot.com/feeds/posts/default/-/Orang%20Kudus?orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts&amp;max-results=999"></script>
+</ol>
+</body>
+</html>
